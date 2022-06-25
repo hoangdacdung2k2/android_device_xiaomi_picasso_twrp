@@ -102,7 +102,7 @@ jobs:
         echo "::set-output name=pwd::$(pwd)"
         git config --global user.name "hdzungx"
         git config --global user.email "hdzungx@gmail.com"
-        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
+        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.LIBRARY_BRANCH }}
       id: pwd
           
     - name: Repo Sync
