@@ -12,7 +12,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   MANIFEST_BRANCH: twrp-12.1
-  DEVICE: spaced
+  DEVICE: picasso
   DT_LINK: https://github.com/hdzungx/android_device_xiaomi_picasso_twrp
   DT_PATH: device/xiaomi/picasso
   TARGET: recoveryimage
