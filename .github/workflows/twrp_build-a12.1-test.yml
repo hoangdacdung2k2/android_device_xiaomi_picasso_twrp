@@ -30,7 +30,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'twrp-12.1'
+        default: 'android-12.1'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
@@ -116,6 +116,7 @@ jobs:
       run: |
       PATH=~/bin:$PATH
       cd ${{ steps.pwd.outputs.pwd }}
+      cd .repo
       git clone https://github.com/hdzungx/local_manifest.git
       cd local_manifest
       repo sync --current-branch --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$( nproc --all )  
