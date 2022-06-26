@@ -1,7 +1,4 @@
-# This is taken from https://github.com/Area69Lab/Recovery-Builder-NoKernel
-# All credits goes to above repo
-
-name: Building recovery
+name: Building TWRP Final TMP
 
 on:
   push:
@@ -55,6 +52,8 @@ jobs:
         mkdir work
         cd work
         repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+        git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/23 && git cherry-pick FETCH_HEAD
+        git fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/6 && git cherry-pick FETCH_HEAD
         repo sync -j4
         repo sync
         git clone $DT_LINK --depth=1 --single-branch $DT_PATH
