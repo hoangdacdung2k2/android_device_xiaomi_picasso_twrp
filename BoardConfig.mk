@@ -4,7 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/$(BOARD_VENDOR)/$(TARGET_DEVICE)
+DEVICE_PATH := device/xiaomi/picasso
+
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -29,7 +32,7 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := $(PRODUCT_RELEASE_NAME)
+TARGET_OTA_ASSERT_DEVICE := picasso
 
 # AVB
 BOARD_AVB_ENABLE := true
